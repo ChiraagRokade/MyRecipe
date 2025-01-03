@@ -10,8 +10,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.navigation.compose.rememberNavController
 import com.example.myrecipe.ui.theme.MyRecipeTheme
-import com.example.myrecipe.view.RecipeScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,11 +28,12 @@ class MainActivity : ComponentActivity() {
 
     @Composable
     private fun MyRecipeApp(modifier: Modifier) {
+        val navController = rememberNavController()
         Column(
             modifier = modifier
                 .fillMaxSize(),
         ) {
-            RecipeScreen()
+            RecipeApp(navController = navController)
         }
     }
 }
